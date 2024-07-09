@@ -22,6 +22,7 @@ class LocationsInLine(admin.StackedInline):
     extra = 0
 
 
+@admin.register(QieCard)
 class QieAdmin(admin.ModelAdmin):
     """ Provides the layout for QieCard editing """
     
@@ -40,6 +41,7 @@ class QieAdmin(admin.ModelAdmin):
         return self.readonly_fields
 
 
+@admin.register(Test)
 class TestAdmin(admin.ModelAdmin):
     """ Provides the layout for the Test editing """
     list_display = ('name', 'description',)
@@ -56,6 +58,7 @@ class TestAdmin(admin.ModelAdmin):
         return self.readonly_fields
 
 
+@admin.register(ReadoutModule)
 class ReadoutAdmin(admin.ModelAdmin):
     """ Provides the layout for ReadoutModule editing """
     
@@ -90,6 +93,7 @@ class ReadoutAdmin(admin.ModelAdmin):
     ordering = ('rm_number',)
     searchfields = ('rm_number')
 
+@admin.register(CalibrationUnit)
 class CUAdmin(admin.ModelAdmin):
     """ Provides the layout for Calibration Unit (CU) editing. """
 
@@ -117,6 +121,7 @@ class CUAdmin(admin.ModelAdmin):
     ordering = ('cu_number',)
     searchfields = ('cu_number')
 
+@admin.register(SipmControlCard)
 class SipmAdmin(admin.ModelAdmin):
     """ Provides the layout for SiPM Control Card editing. """
 
@@ -125,11 +130,6 @@ class SipmAdmin(admin.ModelAdmin):
     searchFields = ('sipm_control_card')
 
 # Registration of the models
-admin.site.register(QieCard, QieAdmin)
 admin.site.register(QieShuntParams)
 admin.site.register(Tester)
 admin.site.register(RMBiasVoltage)
-admin.site.register(Test, TestAdmin)
-admin.site.register(ReadoutModule, ReadoutAdmin)
-admin.site.register(CalibrationUnit, CUAdmin)
-admin.site.register(SipmControlCard, SipmAdmin)

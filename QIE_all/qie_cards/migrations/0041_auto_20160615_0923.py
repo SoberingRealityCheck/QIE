@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 
 import datetime
 from django.db import migrations, models
-from django.utils.timezone import utc
 import qie_cards.models
 
 
@@ -18,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='location',
             name='date_received',
-            field=models.DateTimeField(default=datetime.datetime(2016, 6, 15, 14, 23, 11, 225426, tzinfo=utc), verbose_name='date received'),
+            field=models.DateTimeField(default=datetime.datetime(2016, 6, 15, 14, 23, 11, 225426, tzinfo=datetime.timezone.utc), verbose_name='date received'),
         ),
         migrations.AlterField(
             model_name='qiecard',
