@@ -25,6 +25,6 @@ urlpatterns = [
     path('cu/', include('qie_cards.cu_urls')),
     path('sipm/', include('qie_cards.sipm_urls')),
     path('', RedirectView.as_view(pattern_name='cards:catalog',permanent=False)),
-    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^admin', admin.site.urls),
 ]
-urlpatterns += staticfiles_urlpatterns()
+

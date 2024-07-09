@@ -126,7 +126,7 @@ print(BASE_DIR)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static-root")
 print(STATIC_ROOT)
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, "static/"),)
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, "static"),)
 # Toggle whether data caching is on 
 # (slower update, but faster webpage load time)
 
