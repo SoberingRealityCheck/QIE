@@ -17,6 +17,7 @@ from django.conf import settings
 from django.urls import include, path, re_path
 from django.contrib import admin
 from django.views.generic import RedirectView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('cards/', include('qie_cards.card_urls', namespace='cards')),
@@ -26,4 +27,4 @@ urlpatterns = [
     path('', RedirectView.as_view(pattern_name='cards:catalog',permanent=False)),
     re_path(r'^admin/', admin.site.urls),
 ]
-
+urlpatterns += staticfiles_urlpatterns()
