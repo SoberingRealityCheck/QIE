@@ -85,7 +85,7 @@ def fieldView(request):
     cardStat = json.load(infile)
     infile.close()
     num_required = len(Test.objects.filter(required=True))
-    for i in xrange(len(cus)):
+    for i in range(len(cus)):
         cu = cus[i]
         item = {}
         item["id"] = cu.pk

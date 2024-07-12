@@ -33,7 +33,7 @@ def getPassedDates(cards, tests, attempts):
 def getFailedDates(cards, tests, attempts):
     cardsToInd = {}
     
-    for i in xrange(len(cards)):
+    for i in range(len(cards)):
         cardsToInd[cards[i].pk] = i
     
     cardFailed = [(False, 0)] * len(cards)
@@ -48,7 +48,7 @@ def getFailedDates(cards, tests, attempts):
                 
                 
     failedCards = []
-    for i in xrange(len(cards)):
+    for i in range(len(cards)):
         if cardFailed[i][0]:
             failedCards.append(cardFailed[i][1])
     
@@ -69,7 +69,7 @@ def getPassedCards(cards, tests, attempts):
 def getFailedCards(cards, tests, attempts):
     cardsToInd = {}
     
-    for i in xrange(len(cards)):
+    for i in range(len(cards)):
         cardsToInd[cards[i].pk] = i
     
     cardFailed = [False] * len(cards)
@@ -79,7 +79,7 @@ def getFailedCards(cards, tests, attempts):
                 cardFailed[cardsToInd[attempt.card_id]] = True
         
     failedCards = []
-    for i in xrange(len(cards)):
+    for i in range(len(cards)):
         if cardFailed[i]:
             failedCards.append(cards[i].barcode)
     
@@ -90,7 +90,7 @@ def getCardTestStatesDates(cards, tests, attempts):
     numTests = len(tests)
     testsToInd = {}
 
-    for i in xrange(numTests):
+    for i in range(numTests):
         testsToInd[tests[i].pk] = i
 
     state = {}
@@ -114,7 +114,7 @@ def getCardTestStatesDates(cards, tests, attempts):
 
     cardStat = []
 
-    for i in xrange(len(cards)):
+    for i in range(len(cards)):
         card = cards[i]
         curFail = []
         curPass = []
@@ -122,7 +122,7 @@ def getCardTestStatesDates(cards, tests, attempts):
         tempDict = {}
         curState = state[card.pk]
 
-        for i in xrange(numTests):
+        for i in range(numTests):
             if curState[i][0] == 0:
                 curRem.append((tests[i].name, curState[i][1]))
             elif curState[i][0] == 1:
@@ -142,7 +142,7 @@ def getCardTestStates(cards, tests, attempts):
     numTests = len(tests)
     testsToInd = {}
 
-    for i in xrange(numTests):
+    for i in range(numTests):
         testsToInd[tests[i].pk] = i
 
     state = {}
@@ -167,7 +167,7 @@ def getCardTestStates(cards, tests, attempts):
 
     cardStat = []
 
-    for i in xrange(len(cards)):
+    for i in range(len(cards)):
         card = cards[i]
         curFail = []
         curPass = []
@@ -177,7 +177,7 @@ def getCardTestStates(cards, tests, attempts):
         tempDict["num_failed"] = 0                # number of failed required tests
         curState = state[card.pk]["states"]
 
-        for j in xrange(numTests):
+        for j in range(numTests):
             if curState[j] == 0:
                 curRem.append(tests[j].name)
             elif curState[j] == 1:
@@ -205,7 +205,7 @@ def getRemCardStates(cards, tests, attempts):
     for test in tests:
         testStat[test.name] = []
 
-    for i in xrange(len(cardStates)):
+    for i in range(len(cardStates)):
         barcode = cardStates[i]['barcode']
         for test in cardStates[i]['remaining']:
             testStat[test].append(barcode)
@@ -225,7 +225,7 @@ def getFailedCardStats(cards, tests, attempts):
     numCards = len(cards)
     cardsToInd = {}
 
-    for i in xrange(numCards):
+    for i in range(numCards):
         cardsToInd[cards[i].pk] = i
 
     failed = {}
@@ -241,10 +241,10 @@ def getFailedCardStats(cards, tests, attempts):
 
     testStat = []
 
-    for i in xrange(len(tests)):
+    for i in range(len(tests)):
         tempStat = {"name": tests[i].name}
         failCards = []
-        for j in xrange(len(cards)):
+        for j in range(len(cards)):
             if failed[tests[i].pk][j]:
                 failCards.append(cards[j].barcode)
         tempStat["cards"] = failCards
