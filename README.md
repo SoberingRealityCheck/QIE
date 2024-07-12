@@ -6,10 +6,12 @@ Requirements to run:
 - Django 5.x
 
 Current status:
+-
 Accessing sql database & statics works while debug=True.
 Debug=False passes that functionality to Apache, which is currently not implemented.
 
 IMPORTANT:
+-
 Along with the code in this repo there is also a 21.6 GB 'media' folder that contains... images of the chips, i think? I can't tell what is accessing it.
 If you run into issues and need to scp that to your local device, the directory is located on hep01 under the filepath /hep01-data1/hep06-copy/django/testing_database_he/ and is named 'media'.
 Should be placed next to your github repo folder in a folder named 'QIE_media' for the program to locate it. 
