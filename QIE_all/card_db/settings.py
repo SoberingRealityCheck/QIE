@@ -84,6 +84,7 @@ DATABASES = {
     }
 }
 
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
 
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), '../../../QIE_media/media')
 MEDIA_URL = '/cards/media/'
