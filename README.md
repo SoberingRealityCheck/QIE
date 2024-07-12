@@ -7,9 +7,9 @@ Requirements to run:
 
 Current status:
 -
-Accessing sql database & statics works while debug=True.
+Accessing sql database & statics works while settings.py is set to ```Debug=True```.
 
-Debug=False passes that functionality to Apache, which is currently not implemented.
+```Debug=False``` passes that functionality to Apache, which is currently not implemented because I have no clue how to use it. That is a problem for next week...
 
 IMPORTANT:
 -
