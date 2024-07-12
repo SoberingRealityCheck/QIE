@@ -85,7 +85,7 @@ DATABASES = {
 }
 
 
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__), '../../media/')
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), '../../../QIE_media/media')
 MEDIA_URL = '/cards/media/'
 
 # Password validation
@@ -127,6 +127,7 @@ STATIC_URL = '/static-he/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static-root")
 print(STATIC_ROOT)
 STATICFILES_DIRS = ( os.path.join(BASE_DIR, "static"),)
+print(BASE_DIR)
 # Toggle whether data caching is on 
 # (slower update, but faster webpage load time)
 

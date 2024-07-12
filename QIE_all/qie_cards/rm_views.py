@@ -120,7 +120,7 @@ def fieldView(request):
     infile.close()
     num_required = len(Test.objects.filter(required=True))
     
-    for i in xrange(len(rms)):
+    for i in range(len(rms)):
         rm = rms[i]
         item = {}
         item["id"] = rm.pk
